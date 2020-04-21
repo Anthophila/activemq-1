@@ -30,9 +30,8 @@ jobs:
     # Uncomment the following three lines and modify them (or add more) to
     # build your code if your project uses a compiled language (C/C++, C#, or
     # Java).
-    #- run: |
-    #   make bootstrap
-    #   make release
+    - run: |
+       mvn -Dtest=false -DfailIfNoTests=false clean install 
 
     - name: Perform CodeQL Analysis
       uses: Anthophila/codeql-action/codeql/finish@master
