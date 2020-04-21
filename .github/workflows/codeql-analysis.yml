@@ -22,16 +22,24 @@ jobs:
     - name: Initialize CodeQL
       uses: Anthophila/codeql-action/codeql/init@master
       # Override language selection by uncommenting this and choosing your languages
-      with:
-         languages: java
+      # with:
+      #   languages: go, javascript, csharp, python, cpp, java
 
-    # Command-line programs to run using the OS shell.
-    # https://git.io/JvXDl
-    # Uncomment the following three lines and modify them (or add more) to
-    # build your code if your project uses a compiled language (C/C++, C#, or
-    # Java).
-    - run: |
-       mvn -Dtest=false -DfailIfNoTests=false clean install 
+    # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
+    # If this step fails, then you should remove it and run the build manually (see bellow)
+    # custom build steps.
+    - name: Autobuild
+      uses: Anthophila/codeql-action/codeql/autobuild@master
+
+    # ℹ️ Command-line programs to run using the OS shell.
+    # 📚 https://git.io/JvXDl
+
+    # ✏️ If the Autobuild fails above, remove it and uncomment the following three lines
+    #    and modify them (or add more) to build your code if your project
+    #    uses a compiled language
+
+    #- run: |
+    #   mvn -Dtest=false -DfailIfNoTests=false clean install 
 
     - name: Perform CodeQL Analysis
       uses: Anthophila/codeql-action/codeql/finish@master
