@@ -1,3 +1,5 @@
+![Code scanning - action](https://github.com/autoint/activemq/workflows/Code%20scanning%20-%20action/badge.svg)
+
 Welcome to Apache ActiveMQ 
 =======================================================================
 Apache ActiveMQ is a high performance Apache 2.0 licensed
